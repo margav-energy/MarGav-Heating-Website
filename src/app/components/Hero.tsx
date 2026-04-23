@@ -1,0 +1,98 @@
+import React from 'react';
+import { motion } from 'motion/react';
+import { ArrowRight, Shield, Star } from 'lucide-react';
+import { Button } from './ui/button';
+
+const heroImage = '/src/assets/hero.png';
+
+export function Hero() {
+  const scrollTo = (id: string) => {
+    const el = document.querySelector(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+      <div className="absolute inset-0">
+        <img
+          src={heroImage}
+          alt="Modern warm home interior"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-40">
+        <div className="max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 mb-8 border border-white/10"
+          >
+            <Shield className="w-4 h-4 text-[#33CC66]" />
+            <span className="text-sm text-white/90 font-medium">Gas Safe Registered & MCS Accredited</span>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight tracking-tight"
+          >
+            Engineering the <span className="bg-gradient-to-r from-[#66CC66] via-[#33CC66] to-[#00CC99] bg-clip-text text-transparent">Perfect</span>{' '}
+            Degree
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="mt-6 text-lg sm:text-xl text-white/75 leading-relaxed max-w-xl"
+          >
+            Trusted local heating engineers delivering boiler installations, air source heat pumps, and smart heating solutions across the region.
+            Clear pricing, no surprises.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="mt-10 flex flex-wrap gap-4"
+          >
+            <Button
+              onClick={() => scrollTo('#contact')}
+              className="rounded-full bg-gradient-to-r from-[#66CC66] via-[#33CC66] to-[#00CC99] hover:opacity-90 text-white font-semibold text-base px-8 h-12 gap-2"
+            >
+              Request a Free Quote
+              <ArrowRight className="w-4 h-4" />
+            </Button>
+            <Button
+              onClick={() => scrollTo('#services')}
+              variant="outline"
+              className="rounded-full border-white/30 bg-white/5 text-white hover:bg-white/10 hover:text-white font-semibold text-base px-8 h-12"
+            >
+              Explore Services
+            </Button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="mt-12 flex items-center gap-6"
+          >
+            <div className="flex items-center gap-1">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="w-4 h-4 fill-[#f6c453] text-[#f6c453]" />
+              ))}
+            </div>
+            <span className="text-white/65 text-sm">Rated 4.9/5 from 500+ happy customers</span>
+          </motion.div>
+        </div>
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
+    </section>
+  );
+}
