@@ -17,6 +17,16 @@ const features = [
 ];
 
 export function About() {
+  const [activeTab, setActiveTab] = React.useState<'mission' | 'vision'>('vision');
+
+  const missionText =
+    'MarGav Heating specialises in making homes comfortable, efficient, and future-ready. With years of experience in boiler installations, heat pump systems, and smart heating controls, our team delivers exceptional craftsmanship, transparent pricing, and reliable aftercare.';
+
+  const visionText = [
+    'At Margav Heating, we are committed to delivering reliable, efficient, and future-ready heating solutions for every home and business. By combining high-performance boilers with low-carbon air source heat pumps (ASHPs), we provide flexible options that meet today&apos;s needs while supporting the transition to cleaner energy.',
+    'Our goal is simple: to make heating more efficient, more sustainable, and more accessible without compromising on comfort or quality. Through expert installation, trusted service, and a customer-first approach, we aim to be a leading partner in the move towards smarter, lower-carbon heating.',
+  ];
+
   return (
     <section id="about" className="py-20 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,7 +54,7 @@ export function About() {
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img src={engineerImage} alt="MarGav engineer installing a boiler" className="w-full h-[500px] object-cover" />
             </div>
-            <div className="absolute -bottom-6 -right-6 w-36 h-36 rounded-2xl overflow-hidden shadow-xl border-4 border-white hidden sm:block bg-white">
+            <div className="absolute bottom-0 right-0 w-36 h-36 rounded-tl-2xl overflow-hidden shadow-xl border-l-4 border-t-4 border-white hidden sm:block bg-white">
               <img src={detailImage} alt="Gas Safe registered detail" className="w-full h-full object-cover" />
             </div>
           </motion.div>
@@ -56,14 +66,36 @@ export function About() {
             transition={{ duration: 0.7 }}
           >
             <div className="flex gap-6 mb-8">
-              <button className="text-sm font-semibold text-gray-900 border-b-2 border-[#33CC66] pb-1">Our Mission</button>
-              <button className="text-sm font-semibold text-gray-500 pb-1">Our Vision</button>
+              <button
+                onClick={() => setActiveTab('mission')}
+                className={
+                  activeTab === 'mission'
+                    ? 'text-sm font-semibold text-gray-900 border-b-2 border-[#33CC66] pb-1'
+                    : 'text-sm font-semibold text-gray-500 pb-1'
+                }
+              >
+                Our Mission
+              </button>
+              <button
+                onClick={() => setActiveTab('vision')}
+                className={
+                  activeTab === 'vision'
+                    ? 'text-sm font-semibold text-gray-900 border-b-2 border-[#33CC66] pb-1'
+                    : 'text-sm font-semibold text-gray-500 pb-1'
+                }
+              >
+                Our Vision
+              </button>
             </div>
 
-            <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              MarGav Heating specialises in making homes comfortable, efficient, and future-ready. With years of experience in boiler installations,
-              heat pump systems, and smart heating controls, our team delivers exceptional craftsmanship, transparent pricing, and reliable aftercare.
-            </p>
+            {activeTab === 'mission' ? (
+              <p className="text-gray-600 text-lg leading-relaxed mb-8">{missionText}</p>
+            ) : (
+              <>
+                <p className="text-gray-600 text-lg leading-relaxed mb-6">{visionText[0]}</p>
+                <p className="text-gray-600 text-lg leading-relaxed mb-8">{visionText[1]}</p>
+              </>
+            )}
 
             <div className="space-y-6 mb-10">
               {features.map((feature) => (
