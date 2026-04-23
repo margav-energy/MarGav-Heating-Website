@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { CheckCircle2 } from 'lucide-react';
 
-const engineerImage = '/src/assets/gas_engineer.png';
-const detailImage = '/src/assets/Gas Safe Registered.png';
+const engineerImage = new URL('../../assets/gas_engineer.png', import.meta.url).href;
+const detailImage = new URL('../../assets/Gas Safe Registered.png', import.meta.url).href;
 
 const features = [
   {

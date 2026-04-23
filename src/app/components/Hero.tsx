@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { ArrowRight, Shield, Star } from 'lucide-react';
 import { Button } from './ui/button';
 
-const heroImage = '/src/assets/hero.png';
+const heroImage = new URL('../../assets/hero.png', import.meta.url).href;
 
 export function Hero() {
   const scrollTo = (id: string) => {

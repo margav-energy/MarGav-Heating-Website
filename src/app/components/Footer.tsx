@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Facebook, Linkedin, Instagram } from 'lucide-react';
-const logo = '/src/assets/margav_heating_logo.png';
+const logo = new URL('../../assets/margav_heating_logo.png', import.meta.url).href;
 const phoneHref = 'tel:+441889256069';
 const env = (import.meta as ImportMeta & { env: Record<string, string | undefined> }).env;
 const PRIVACY_POLICY_URL = env.VITE_PRIVACY_POLICY_URL || '#';

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Phone, Menu, X } from 'lucide-react';
-const logo = '/src/assets/margav_heating_logo.png';
+const logo = new URL('../../assets/margav_heating_logo.png', import.meta.url).href;
 const phoneHref = 'tel:+441889256069';
 
 export function Header() {
