@@ -1,13 +1,11 @@
 import React from 'react';
+import { Loader2, Search } from 'lucide-react';
 
 type FormState = {
   fullName: string;
   email: string;
   phone: string;
   postcode: string;
-  addressLine1: string;
-  townCity: string;
-  county: string;
   fullAddress: string;
   serviceType: string;
   message: string;
@@ -18,9 +16,6 @@ const initialFormState: FormState = {
   email: '',
   phone: '',
   postcode: '',
-  addressLine1: '',
-  townCity: '',
-  county: '',
   fullAddress: '',
   serviceType: '',
   message: '',
@@ -38,7 +33,7 @@ export function Contact() {
     };
 
   const lookupAddressByPostcode = async () => {
-    const postcode = form.postcode.trim().toUpperCase();
+    const postcode = form.postcode.trim();
     const mapboxToken = (import.meta as { env?: Record<string, string | undefined> }).env?.VITE_MAPBOX_ACCESS_TOKEN;
 
     if (!postcode) {
@@ -58,7 +53,7 @@ export function Contact() {
       const response = await fetch(
         `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
           postcode
-        )}.json?access_token=${mapboxToken}&autocomplete=false&country=gb&types=postcode,address&limit=1`
+        )}.json?access_token=${mapboxToken}&autocomplete=true&country=gb&types=address,postcode&limit=5`
       );
 
       if (!response.ok) {
@@ -66,7 +61,10 @@ export function Contact() {
       }
 
       const data = await response.json();
-      const feature = data?.features?.[0];
+      const features = Array.isArray(data?.features) ? data.features : [];
+      const feature =
+        features.find((item: { place_type?: string[] }) => item.place_type?.includes('address')) ??
+        features[0];
 
       if (!feature) {
         setAddressLookupMessage('No address found for that postcode.');
@@ -74,23 +72,12 @@ export function Contact() {
       }
 
       const context = Array.isArray(feature.context) ? feature.context : [];
-      const addressLine1 = feature.properties?.address
-        ? `${feature.properties.address} ${feature.text}`.trim()
-        : feature.text ?? '';
-      const townCity =
-        context.find((item: { id?: string }) => item.id?.startsWith('place'))?.text ??
-        context.find((item: { id?: string }) => item.id?.startsWith('locality'))?.text ??
-        '';
-      const county = context.find((item: { id?: string }) => item.id?.startsWith('region'))?.text ?? '';
       const resolvedPostcode =
         context.find((item: { id?: string }) => item.id?.startsWith('postcode'))?.text ?? postcode;
 
       setForm((prev) => ({
         ...prev,
         postcode: resolvedPostcode,
-        addressLine1,
-        townCity,
-        county,
         fullAddress: feature.place_name ?? '',
       }));
       setAddressLookupMessage('');
@@ -220,9 +207,14 @@ export function Contact() {
                     type="button"
                     onClick={() => void lookupAddressByPostcode()}
                     disabled={isLookingUpAddress}
+                    aria-label="Find address by postcode"
                     className="px-4 py-3 rounded-lg border border-gray-200 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {isLookingUpAddress ? 'Finding...' : 'Find'}
+                    {isLookingUpAddress ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : (
+                      <Search className="w-4 h-4" />
+                    )}
                   </button>
                 </div>
               </div>
@@ -230,31 +222,6 @@ export function Contact() {
               {addressLookupMessage && (
                 <p className="text-sm text-gray-600">{addressLookupMessage}</p>
               )}
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  placeholder="Address line 1*"
-                  value={form.addressLine1}
-                  onChange={updateField('addressLine1')}
-                  className="px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-[#33CC66]"
-                />
-                <input
-                  type="text"
-                  placeholder="Town / City*"
-                  value={form.townCity}
-                  onChange={updateField('townCity')}
-                  className="px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-[#33CC66]"
-                />
-              </div>
-
-              <input
-                type="text"
-                placeholder="County"
-                value={form.county}
-                onChange={updateField('county')}
-                className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-[#33CC66]"
-              />
 
               <input
                 type="text"
