@@ -18,8 +18,8 @@ export default function App() {
     <div className="min-h-screen">
       <ConsentManager />
       <Header />
-      <Hero />
       <FinanceBanner />
+      <Hero />
       <About />
       <Services />
       <Trust />

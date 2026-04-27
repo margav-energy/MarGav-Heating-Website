@@ -91,6 +91,7 @@ export function Footer() {
             <a href={PRIVACY_POLICY_URL} className="hover:text-[#33CC66] transition-colors">Privacy Policy</a>
             <a href={COOKIE_POLICY_URL} className="hover:text-[#33CC66] transition-colors">Cookie Policy</a>
             <a href={TERMS_URL} className="hover:text-[#33CC66] transition-colors">Terms</a>
+            <a href="#" className="termly-display-preferences hover:text-[#33CC66] transition-colors">Consent Preferences</a>
           </div>
           <p className="text-white/55 text-xs md:text-sm">
             MarGav Heating is a trading style of Margav Renewables Ltd

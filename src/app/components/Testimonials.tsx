@@ -18,7 +18,7 @@ export function Testimonials() {
     },
     {
       quote:
-        'Called them for an emergency repair and they arrived within 2 hours. Fixed the issue quickly and explained everything clearly. Will definitely use them again for servicing.',
+        'Called them for urgent support and they arrived within 2 hours. Solved the issue quickly and explained everything clearly. Will definitely use them again for servicing.',
       name: 'Emily Davidson',
       role: 'Homeowner',
     },
@@ -69,18 +69,10 @@ export function Testimonials() {
             className="lg:col-span-2 bg-white rounded-3xl border border-gray-200 p-8 lg:p-10 flex flex-col justify-between"
           >
             <div>
-              <div className="text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight">500+</div>
+              <div className="text-5xl lg:text-6xl font-bold text-[#3333cc] tracking-tight">500+</div>
               <p className="mt-3 text-gray-600 leading-relaxed">
                 Hear directly from homeowners who trusted us to transform their heating with quality and precision.
               </p>
-            </div>
-            <div className="mt-8">
-              <p className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-3">Trusted by</p>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-900">V</div>
-                <div className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-900">W</div>
-                <div className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-900">D</div>
-              </div>
             </div>
           </motion.div>
 

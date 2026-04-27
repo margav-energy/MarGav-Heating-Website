@@ -1,12 +1,14 @@
 import React from 'react';
 
 const partnerLogos = [
-  { name: 'Ideal', src: new URL('../../assets/ideal.svg', import.meta.url).href },
   { name: 'Intergas', src: new URL('../../assets/Intergas logo.webp', import.meta.url).href },
   { name: 'MCS', src: new URL('../../assets/mcs.webp', import.meta.url).href },
-  { name: 'Vaillant', src: new URL('../../assets/vaillant-boiler-logo.png', import.meta.url).href },
-  { name: 'Worcester Bosch', src: new URL('../../assets/worcester-bosch.png', import.meta.url).href },
   { name: 'Gas Safe Registered', src: new URL('../../assets/Gas Safe Registered.png', import.meta.url).href },
+  { name: 'NFRC', src: new URL('../../assets/NFRC.png', import.meta.url).href },
+  { name: 'NICEIC', src: new URL('../../assets/NICEIC.png', import.meta.url).href },
+  { name: 'ICO', src: new URL('../../assets/ico.png', import.meta.url).href },
+  { name: 'safecontractor', src: new URL('../../assets/safecontractor.webp', import.meta.url).href },
+  {name:'constructionline', src: new URL('../../assets/constructionline.png', import.meta.url).href},
 ];
 
 export function Partners() {

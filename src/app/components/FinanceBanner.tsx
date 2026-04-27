@@ -3,7 +3,7 @@ import { BadgeAlert } from 'lucide-react';
 
 export function FinanceBanner() {
   return (
-    <section className="bg-gray-950 py-3">
+    <section className="absolute top-24 left-0 right-0 z-40 bg-transparent py-3 pointer-events-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-full border border-white/15 bg-white/5 px-4 py-3 text-white/90 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
           <BadgeAlert className="w-4 h-4 text-[#33CC66] flex-shrink-0 mt-0.5 sm:mt-0" />

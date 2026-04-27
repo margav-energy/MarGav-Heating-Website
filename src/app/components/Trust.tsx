@@ -1,25 +1,29 @@
 import { Users, ThumbsUp, Award, Shield } from 'lucide-react';
 import React from 'react';
 
+const expertImage = new URL('../../assets/expert.png', import.meta.url).href;
+const premiumMaterialImage = new URL('../../assets/premium_material.png', import.meta.url).href;
+const customerSatisfactionImage = new URL('../../assets/customer_satisfaction.png', import.meta.url).href;
+
 export function Trust() {
   const features = [
     {
       icon: Users,
       title: 'EXPERT TEAM',
       description: 'Highly experienced and certified heating engineers who prioritize quality.',
-      image: 'https://images.unsplash.com/photo-1605556786938-d7581f7e477a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw1fHxoZWF0aW5nJTIwZW5naW5lZXIlMjBib2lsZXIlMjBpbnN0YWxsYXRpb24lMjBwcm9mZXNzaW9uYWx8ZW58MXx8fHwxNzc2OTMzMTg3fDA&ixlib=rb-4.1.0&q=80&w=1080'
+      image: expertImage
     },
     {
       icon: Award,
       title: 'PREMIUM MATERIALS',
       description: 'We use only the highest quality heating systems and components.',
-      image: 'https://images.unsplash.com/photo-1772563139470-9232b4e435c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBob21lJTIwaW50ZXJpb3IlMjBsaXZpbmclMjByb29tJTIwY29tZm9ydGFibGV8ZW58MXx8fHwxNzc2ODQ3OTc2fDA&ixlib=rb-4.1.0&q=80&w=1080'
+      image: premiumMaterialImage
     },
     {
       icon: ThumbsUp,
       title: 'CUSTOMER SATISFACTION',
       description: 'Dedicated to delivering exceptional service and complete peace of mind.',
-      image: 'https://images.unsplash.com/photo-1632120669818-ed5498030e32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBob21lJTIwaW50ZXJpb3IlMjBsaXZpbmclMjByb29tJTIwY29tZm9ydGFibGV8ZW58MXx8fHwxNzc2ODQ3OTc2fDA&ixlib=rb-4.1.0&q=80&w=1080'
+      image: customerSatisfactionImage
     }
   ];
 

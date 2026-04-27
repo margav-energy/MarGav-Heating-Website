@@ -17,7 +17,7 @@ export function FAQ() {
     },
     {
       question: 'DO YOU OFFER WARRANTIES ON YOUR WORK?',
-      answer: 'Absolutely. All installations come with manufacturer warranties (typically 5-10 years) plus our workmanship guarantee. We also offer extended service plans for ongoing peace of mind.'
+      answer: 'Absolutely. All installations come with manufacturer warranties (typically 10 years) plus our workmanship guarantee.'
     }
   ];
 
