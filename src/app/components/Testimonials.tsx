@@ -55,9 +55,9 @@ export function Testimonials() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#33CC66] mb-3">Testimonials</p>
+          <p className="text-sm font-semibold uppercase tracking-widest text-[#3333cc] mb-3">Testimonials</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-            What Our <span className="bg-gradient-to-r from-[#66CC66] via-[#33CC66] to-[#00CC99] bg-clip-text text-transparent">Clients</span> Say
+            What Our <span className="text-[#3333cc]">Clients</span> Say
           </h2>
         </motion.div>
 
@@ -94,8 +94,8 @@ export function Testimonials() {
             </div>
             <div className="mt-8 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#33CC66]/10 flex items-center justify-center">
-                  <span className="text-sm font-bold text-[#33CC66]">{testimonials[current].name[0]}</span>
+                <div className="w-10 h-10 rounded-full bg-[#3333cc]/10 flex items-center justify-center">
+                  <span className="text-sm font-bold text-[#3333cc]">{testimonials[current].name[0]}</span>
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900 text-sm">{testimonials[current].name}</p>

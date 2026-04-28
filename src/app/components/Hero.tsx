@@ -30,7 +30,7 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 mb-8 border border-white/10"
           >
-            <Shield className="w-4 h-4 text-[#33CC66]" />
+            <Shield className="w-4 h-4 text-[#3333cc]" />
             <span className="text-sm text-white/90 font-medium">Gas Safe Registered & MCS Accredited</span>
           </motion.div>
 
@@ -40,7 +40,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight tracking-tight"
           >
-            Engineering the <span className="bg-gradient-to-r from-[#66CC66] via-[#33CC66] to-[#00CC99] bg-clip-text text-transparent">Perfect</span>{' '}
+            Engineering the <span className="text-[#3333cc]">Perfect</span>{' '}
             Degree
           </motion.h1>
 
@@ -62,7 +62,7 @@ export function Hero() {
           >
             <Button
               onClick={() => scrollTo('#contact')}
-              className="rounded-full bg-gradient-to-r from-[#66CC66] via-[#33CC66] to-[#00CC99] hover:opacity-90 text-white font-semibold text-base px-8 h-12 gap-2"
+              className="rounded-full bg-[#3333cc] hover:opacity-90 text-white font-semibold text-base px-8 h-12 gap-2"
             >
               Request a Free Quote
               <ArrowRight className="w-4 h-4" />

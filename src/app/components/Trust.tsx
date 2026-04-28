@@ -1,4 +1,4 @@
-import { Users, ThumbsUp, Award, Shield } from 'lucide-react';
+import { Users, ThumbsUp, Award } from 'lucide-react';
 import React from 'react';
 
 const expertImage = new URL('../../assets/expert.png', import.meta.url).href;
@@ -32,7 +32,7 @@ export function Trust() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            EXPERIENCE THE <span className="bg-gradient-to-r from-[#66CC66] via-[#33CC66] to-[#00CC99] bg-clip-text text-transparent">DIFFERENCE</span><br />
+            EXPERIENCE THE <span className="text-[#3333cc]">DIFFERENCE</span><br />
             QUALITY GUARANTEED
           </h2>
         </div>
@@ -48,7 +48,7 @@ export function Trust() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
-                  <div className="w-14 h-14 bg-gradient-to-r from-[#66CC66] via-[#33CC66] to-[#00CC99] rounded-full flex items-center justify-center mb-3">
+                  <div className="w-14 h-14 bg-[#3333cc] rounded-full flex items-center justify-center mb-3">
                     <feature.icon className="w-7 h-7 text-white" />
                   </div>
                 </div>

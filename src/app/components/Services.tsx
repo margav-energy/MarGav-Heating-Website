@@ -26,10 +26,10 @@ export function Services() {
   return (
     <section id="services" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-end mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold">
+        <div className="flex justify-center items-end mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-center">
             EXPERT HEATING<br />
-            SERVICES <span className="bg-gradient-to-r from-[#66CC66] via-[#33CC66] to-[#00CC99] bg-clip-text text-transparent">DELIVERED</span>
+            SERVICES <span className="text-[#3333cc]">DELIVERED</span>
           </h2>
         </div>
 
@@ -43,7 +43,7 @@ export function Services() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute top-4 left-4 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg">
-                  <service.icon className="w-8 h-8 text-[#33CC66]" />
+                  <service.icon className="w-8 h-8 text-[#3333cc]" />
                 </div>
               </div>
               <div className="p-6">

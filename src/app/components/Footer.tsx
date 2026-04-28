@@ -63,7 +63,7 @@ export function Footer() {
               />
               <button
                 type="button"
-                className="w-full rounded-md bg-gradient-to-r from-[#66CC66] to-[#00CC99] text-white font-semibold py-2.5 text-sm hover:opacity-90 transition-opacity"
+                className="w-full rounded-md bg-[#3333cc] text-white font-semibold py-2.5 text-sm hover:opacity-90 transition-opacity"
               >
                 Subscribe
               </button>

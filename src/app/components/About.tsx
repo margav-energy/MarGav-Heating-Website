@@ -1,30 +1,36 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { CheckCircle2 } from 'lucide-react';
+import React from "react";
+import { motion } from "motion/react";
+import { CheckCircle2 } from "lucide-react";
 
-const engineerImage = new URL('../../assets/gas_engineer.png', import.meta.url).href;
-const detailImage = new URL('../../assets/Gas Safe Registered.png', import.meta.url).href;
+const engineerImage = new URL("../../assets/gas_engineer.png", import.meta.url)
+  .href;
+const detailImage = new URL(
+  "../../assets/Gas Safe Registered.png",
+  import.meta.url,
+).href;
 
 const features = [
   {
-    title: 'Full Heating System Design',
+    title: "Full Heating System Design",
     desc: "Complete system design tailored to your home's unique requirements.",
   },
   {
-    title: 'Renewable Energy Solutions',
-    desc: 'Air source heat pumps, smart controls, and energy-efficient upgrades.',
+    title: "Renewable Energy Solutions",
+    desc: "Air source heat pumps, smart controls, and energy-efficient upgrades.",
   },
 ];
 
 export function About() {
-  const [activeTab, setActiveTab] = React.useState<'mission' | 'vision'>('vision');
+  const [activeTab, setActiveTab] = React.useState<"mission" | "vision">(
+    "vision",
+  );
 
   const missionText =
-    'MarGav Heating specialises in making homes comfortable, efficient, and future-ready. With years of experience in boiler installations, heat pump systems, and smart heating controls, our team delivers exceptional craftsmanship, transparent pricing, and reliable aftercare.';
+    "MarGav Heating specialises in making homes comfortable, efficient, and future-ready. With years of experience in boiler installations, heat pump systems, and smart heating controls, our team delivers exceptional craftsmanship, transparent pricing, and reliable aftercare.";
 
   const visionText = [
-    'At Margav Heating, we are committed to delivering reliable, efficient, and future-ready heating solutions for every home and business. By combining high-performance boilers with low-carbon air source heat pumps (ASHPs), we provide flexible options that meet today&apos;s needs while supporting the transition to cleaner energy.',
-    'Our goal is simple: to make heating more efficient, more sustainable, and more accessible without compromising on comfort or quality. Through expert installation, trusted service, and a customer-first approach, we aim to be a leading partner in the move towards smarter, lower-carbon heating.',
+    "At Margav Heating, we are committed to delivering reliable, efficient, and future-ready heating solutions for every home and business. By combining high-performance boilers with low-carbon air source heat pumps (ASHPs), we provide flexible options that meet today&apos;s needs while supporting the transition to cleaner energy.",
+    "Our goal is simple: to make heating more efficient, more sustainable, and more accessible without compromising on comfort or quality. Through expert installation, trusted service, and a customer-first approach, we aim to be a leading partner in the move towards smarter, lower-carbon heating.",
   ];
 
   return (
@@ -36,9 +42,14 @@ export function About() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#33CC66] mb-3">About MarGav</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#3333cc] mb-3">
+            About MarGav
+          </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-            Local Expertise, <span className="bg-gradient-to-r from-[#66CC66] via-[#33CC66] to-[#00CC99] bg-clip-text text-transparent">Modern</span>{' '}
+            Local Expertise,{" "}
+            <span className="text-[#3333cc]">
+              Modern
+            </span>{" "}
             Solutions
           </h2>
         </motion.div>
@@ -52,10 +63,18 @@ export function About() {
             className="relative"
           >
             <div className="rounded-3xl overflow-hidden shadow-2xl">
-              <img src={engineerImage} alt="MarGav engineer installing a boiler" className="w-full h-[500px] object-cover" />
+              <img
+                src={engineerImage}
+                alt="MarGav engineer installing a boiler"
+                className="w-full h-[500px] object-cover"
+              />
             </div>
-            <div className="absolute bottom-0 right-0 w-36 h-36 rounded-tl-2xl overflow-hidden shadow-xl border-l-4 border-t-4 border-white hidden sm:block bg-white">
-              <img src={detailImage} alt="Gas Safe registered detail" className="w-full h-full object-cover" />
+            <div className="absolute bottom-0 right-0 w-44 h-36 rounded-tl-2xl overflow-hidden shadow-xl border-l-4 border-t-4 border-white hidden sm:block bg-white">
+              <img
+                src={detailImage}
+                alt="Gas Safe registered detail"
+                className="w-full h-full object-cover"
+              />
             </div>
           </motion.div>
 
@@ -67,67 +86,59 @@ export function About() {
           >
             <div className="flex gap-6 mb-8">
               <button
-                onClick={() => setActiveTab('mission')}
+                onClick={() => setActiveTab("mission")}
                 className={
-                  activeTab === 'mission'
-                    ? 'text-sm font-semibold text-gray-900 border-b-2 border-[#33CC66] pb-1'
-                    : 'text-sm font-semibold text-gray-500 pb-1'
+                  activeTab === "mission"
+                    ? "text-sm font-semibold text-gray-900 border-b-2 border-[#3333cc] pb-1"
+                    : "text-sm font-semibold text-gray-500 pb-1"
                 }
               >
                 Our Mission
               </button>
               <button
-                onClick={() => setActiveTab('vision')}
+                onClick={() => setActiveTab("vision")}
                 className={
-                  activeTab === 'vision'
-                    ? 'text-sm font-semibold text-gray-900 border-b-2 border-[#33CC66] pb-1'
-                    : 'text-sm font-semibold text-gray-500 pb-1'
+                  activeTab === "vision"
+                    ? "text-sm font-semibold text-gray-900 border-b-2 border-[#3333cc] pb-1"
+                    : "text-sm font-semibold text-gray-500 pb-1"
                 }
               >
                 Our Vision
               </button>
             </div>
 
-            {activeTab === 'mission' ? (
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">{missionText}</p>
+            {activeTab === "mission" ? (
+              <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                {missionText}
+              </p>
             ) : (
               <>
-                <p className="text-gray-600 text-lg leading-relaxed mb-6">{visionText[0]}</p>
-                <p className="text-gray-600 text-lg leading-relaxed mb-8">{visionText[1]}</p>
+                <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                  {visionText[0]}
+                </p>
+                <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                  {visionText[1]}
+                </p>
               </>
             )}
 
-            <div className="space-y-6 mb-10">
-              {features.map((feature) => (
-                <div key={feature.title} className="flex gap-4">
-                  <div className="mt-1 w-10 h-10 rounded-xl bg-[#33CC66]/10 flex items-center justify-center shrink-0">
-                    <CheckCircle2 className="w-5 h-5 text-[#33CC66]" />
+            {activeTab === "mission" && (
+              <div className="space-y-6 mb-10">
+                {features.map((feature) => (
+                  <div key={feature.title} className="flex gap-4">
+                    <div className="mt-1 w-10 h-10 rounded-xl bg-[#3333cc]/10 flex items-center justify-center shrink-0">
+                      <CheckCircle2 className="w-5 h-5 text-[#3333cc]" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">
+                        {feature.title}
+                      </h4>
+                      <p className="text-sm text-gray-600 mt-1">{feature.desc}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">{feature.title}</h4>
-                    <p className="text-sm text-gray-600 mt-1">{feature.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex items-center gap-6">
-              <button
-                onClick={() => document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })}
-                className="inline-flex items-center gap-2 rounded-full border border-gray-300 px-6 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-900 hover:text-white transition-all"
-              >
-                About Us →
-              </button>
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-gray-900 flex items-center justify-center">
-                  <span className="text-[8px] font-bold text-white leading-none">
-                    GAS
-                    <br />
-                    SAFE
-                  </span>
-                </div>
+                ))}
               </div>
-            </div>
+            )}
           </motion.div>
         </div>
       </div>

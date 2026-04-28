@@ -5,21 +5,25 @@ import { Plus } from 'lucide-react';
 export function FAQ() {
   const faqs = [
     {
-      question: 'HOW LONG DOES A TYPICAL BOILER INSTALLATION TAKE?',
-      answer: 'Most boiler installations are completed within 1-2 days, depending on the complexity of your system and any additional work required. We provide a detailed timeline during your free consultation.'
+      question: "HOW LONG DOES A TYPICAL BOILER INSTALLATION TAKE?",
+      answer:
+        "Most boiler installations are completed within 1-2 days, depending on the complexity of your system and any additional work required. We provide a detailed timeline during your free consultation.",
     },
     {
-      question: 'DO YOU PROVIDE FREE CONSULTATIONS?',
-      answer: 'Yes! We offer completely free home surveys and no-obligation quotes. Our experts will assess your heating needs and provide transparent pricing with no hidden costs.'
+      question: "DO YOU PROVIDE FREE CONSULTATIONS?",
+      answer:
+        "Yes! We offer completely free home surveys and no-obligation quotes. Our experts will assess your heating needs and provide transparent pricing with no hidden costs.",
     },
     {
-      question: 'ARE HEAT PUMPS SUITABLE FOR MY HOME?',
-      answer: 'Heat pumps work brilliantly for most homes, especially well-insulated properties. During our free survey, we assess your home\'s suitability and recommend the best heating solution for your needs and budget.'
+      question: "ARE HEAT PUMPS SUITABLE FOR MY HOME?",
+      answer:
+        "Heat pumps work brilliantly for most homes, especially well-insulated properties. During our free survey, we assess your home's suitability and recommend the best heating solution for your needs.",
     },
     {
-      question: 'DO YOU OFFER WARRANTIES ON YOUR WORK?',
-      answer: 'Absolutely. All installations come with manufacturer warranties (typically 10 years) plus our workmanship guarantee.'
-    }
+      question: "DO YOU OFFER WARRANTIES ON YOUR WORK?",
+      answer:
+        "Absolutely. All installations come with 12 years parts & labour warranty.",
+    },
   ];
 
   return (
@@ -28,7 +32,7 @@ export function FAQ() {
         <div className="grid md:grid-cols-2 gap-12">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              COMMON <span className="bg-gradient-to-r from-[#66CC66] via-[#33CC66] to-[#00CC99] bg-clip-text text-transparent">QUESTIONS</span> ABOUT<br />
+              COMMON <span className="text-[#3333cc]">QUESTIONS</span> ABOUT<br />
               OUR HEATING SERVICES
             </h2>
           </div>

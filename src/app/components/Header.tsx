@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Phone, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 const logo = new URL('../../assets/margav_intergas.png', import.meta.url).href;
-const phoneHref = 'tel:+441889256069';
 
 export function Header() {
   const navLinks = [
@@ -64,15 +63,15 @@ export function Header() {
   }, [isMobileMenuOpen]);
 
   return (
-    <header className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto relative">
-        <div className="h-24 rounded-full border border-white/25 bg-black/45 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
-          <div className="h-24 px-4 sm:px-6 flex items-center justify-between gap-3">
+        <div className="h-24">
+          <div className="h-24 px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3">
             <div className="flex items-center gap-2">
               <img src={logo} alt="MarGav Heating logo" className="h-12 sm:h-14 md:h-16 w-auto object-contain" />
             </div>
 
-            <nav className="hidden md:flex items-center gap-2 rounded-full bg-black/20 border border-white/15 px-2 py-1">
+            <nav className="hidden md:flex items-center gap-2">
               {navLinks.map((link) => (
                 <a
                   key={link.id}
@@ -80,8 +79,8 @@ export function Header() {
                   onClick={() => setActiveSection(link.id)}
                   className={
                     activeSection === link.id
-                      ? 'text-white text-sm px-4 py-2 rounded-full bg-gradient-to-r from-[#66CC66] via-[#33CC66] to-[#00CC99] transition-colors'
-                      : 'text-white/90 text-sm px-4 py-2 rounded-full hover:bg-white/10 transition-colors'
+                      ? 'text-white text-sm px-4 py-2 rounded-full bg-[#3333cc] transition-colors'
+                      : 'text-gray-700 text-sm px-4 py-2 rounded-full hover:bg-gray-100 transition-colors'
                   }
                 >
                   {link.label}
@@ -90,17 +89,14 @@ export function Header() {
             </nav>
 
             <div className="flex items-center gap-3">
-              <a href={phoneHref} className="hidden lg:block text-white/90 text-sm hover:text-[#33CC66] transition-colors">
-                01889 256069
-              </a>
-              <button className="hidden sm:inline-flex bg-gradient-to-r from-[#66CC66] via-[#33CC66] to-[#00CC99] text-white text-sm px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity">
+              <button className="hidden sm:inline-flex bg-[#3333cc] text-white text-sm px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity">
                 GET A QUOTE
               </button>
               <button
                 type="button"
                 aria-label="Toggle menu"
                 onClick={() => setIsMobileMenuOpen((open) => !open)}
-                className="md:hidden w-10 h-10 rounded-full border border-white/25 bg-white/15 text-white flex items-center justify-center"
+                className="md:hidden w-10 h-10 rounded-full border border-gray-300 bg-white text-gray-700 flex items-center justify-center"
               >
                 {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
@@ -132,7 +128,7 @@ export function Header() {
                   }}
                   className={
                     activeSection === link.id
-                      ? 'block text-white text-sm px-4 py-3 rounded-xl bg-gradient-to-r from-[#66CC66] via-[#33CC66] to-[#00CC99]'
+                      ? 'block text-white text-sm px-4 py-3 rounded-xl bg-[#3333cc]'
                       : 'block text-white/90 text-sm px-4 py-3 rounded-xl hover:bg-white/10 transition-colors'
                   }
                 >
@@ -140,11 +136,11 @@ export function Header() {
                 </a>
               ))}
               <a
-                href={phoneHref}
+                href="#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block text-white/90 text-sm px-4 py-3 rounded-xl hover:bg-white/10 transition-colors"
               >
-                Call: 01889 256069
+                Contact Us
               </a>
             </div>
           </div>
