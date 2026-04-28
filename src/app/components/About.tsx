@@ -46,10 +46,7 @@ export function About() {
             About MarGav
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-            Local Expertise,{" "}
-            <span className="text-[#3333cc]">
-              Modern
-            </span>{" "}
+            Local Expertise, <span className="text-[#3333cc]">Modern</span>{" "}
             Solutions
           </h2>
         </motion.div>
@@ -133,7 +130,9 @@ export function About() {
                       <h4 className="font-semibold text-gray-900">
                         {feature.title}
                       </h4>
-                      <p className="text-sm text-gray-600 mt-1">{feature.desc}</p>
+                      <p className="text-sm text-gray-600 mt-1">
+                        {feature.desc}
+                      </p>
                     </div>
                   </div>
                 ))}

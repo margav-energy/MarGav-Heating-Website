@@ -1,7 +1,7 @@
 import { Phone } from "lucide-react";
-import React from 'react';
+import React from "react";
 
-const ctaImage = new URL('../../assets/upgrade_now.png', import.meta.url).href;
+const ctaImage = new URL("../../assets/upgrade_now.png", import.meta.url).href;
 
 export function CTA() {
   return (
@@ -18,7 +18,9 @@ export function CTA() {
 
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              <span className="block whitespace-nowrap">UPGRADE YOUR HOME NOW</span>
+              <span className="block whitespace-nowrap">
+                UPGRADE YOUR HOME NOW
+              </span>
               <span className="whitespace-nowrap">
                 <span className="text-[#3333cc]">QUICKLY</span> AND{" "}
                 <span className="text-[#3333cc]">EFFORTLESSLY</span>
@@ -40,9 +42,7 @@ export function CTA() {
               <Phone className="w-6 h-6 text-[#3333cc]" />
               <div>
                 <div className="text-2xl font-bold">01889 256069</div>
-                <div className="text-white/60">
-                  Support when you need us
-                </div>
+                <div className="text-white/60">Support when you need us</div>
               </div>
             </div>
           </div>
