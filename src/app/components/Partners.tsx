@@ -3,7 +3,7 @@ import React from "react";
 const partnerLogos = [
   {
     name: "Intergas",
-    src: new URL("../../assets/Intergas logo.webp", import.meta.url).href,
+    src: new URL("../../assets/margav_intergas.png", import.meta.url).href,
   },
   { name: "MCS", src: new URL("../../assets/mcs.webp", import.meta.url).href },
   {
