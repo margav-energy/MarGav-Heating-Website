@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Phone, Menu, X } from 'lucide-react';
-const logo = new URL('../../assets/margav_heating_logo.png', import.meta.url).href;
+const logo = new URL('../../assets/margav_intergas.png', import.meta.url).href;
 const phoneHref = 'tel:+441889256069';
 
 export function Header() {
@@ -66,10 +66,10 @@ export function Header() {
   return (
     <header className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto relative">
-        <div className="h-20 rounded-full border border-white/25 bg-black/45 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
-          <div className="h-20 px-4 sm:px-6 flex items-center justify-between gap-3">
+        <div className="h-24 rounded-full border border-white/25 bg-black/45 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
+          <div className="h-24 px-4 sm:px-6 flex items-center justify-between gap-3">
             <div className="flex items-center gap-2">
-              <img src={logo} alt="MarGav Heating logo" className="h-9 w-auto object-contain" />
+              <img src={logo} alt="MarGav Heating logo" className="h-12 sm:h-14 md:h-16 w-auto object-contain" />
             </div>
 
             <nav className="hidden md:flex items-center gap-2 rounded-full bg-black/20 border border-white/15 px-2 py-1">

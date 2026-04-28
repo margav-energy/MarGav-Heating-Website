@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Facebook, Linkedin, Instagram } from 'lucide-react';
-const logo = new URL('../../assets/margav_heating_logo.png', import.meta.url).href;
+const logo = new URL('../../assets/margav_intergas.png', import.meta.url).href;
 const phoneHref = 'tel:+441889256069';
 const env = (import.meta as ImportMeta & { env: Record<string, string | undefined> }).env;
 const PRIVACY_POLICY_URL = env.VITE_PRIVACY_POLICY_URL || '#';
@@ -14,7 +14,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-3 mb-12">
           <div>
             <div className="mb-5">
-              <img src={logo} alt="MarGav Heating logo" className="h-9 w-auto object-contain" />
+              <img src={logo} alt="MarGav Heating logo" className="h-16 w-auto object-contain" />
             </div>
             <p className="text-white/70 mb-6 max-w-sm leading-relaxed">
               Transforming UK properties of all types into energy-efficient, sustainable homes through expert consultancy and professional installation services.
