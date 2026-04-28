@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 const logo = new URL("../../assets/margav_intergas.png", import.meta.url).href;
+const phoneHref = "tel:+441889256069";
 
 export function Header() {
   const navLinks = [
@@ -93,6 +94,12 @@ export function Header() {
             </nav>
 
             <div className="flex items-center gap-3">
+              <a
+                href={phoneHref}
+                className="hidden lg:block text-gray-700 text-sm hover:text-[#3333cc] transition-colors"
+              >
+                01889 256069
+              </a>
               <button className="hidden sm:inline-flex bg-[#3333cc] text-white text-sm px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity">
                 GET A QUOTE
               </button>
@@ -143,11 +150,11 @@ export function Header() {
                 </a>
               ))}
               <a
-                href="#contact"
+                href={phoneHref}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block text-white/90 text-sm px-4 py-3 rounded-xl hover:bg-white/10 transition-colors"
               >
-                Contact Us
+                01889 256069
               </a>
             </div>
           </div>

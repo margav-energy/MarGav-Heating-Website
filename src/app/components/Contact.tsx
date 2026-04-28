@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, Loader2, Search } from 'lucide-react';
+import { CheckCircle2, Loader2, Search, Shield } from 'lucide-react';
 
 type FormState = {
   fullName: string;
@@ -186,14 +186,18 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 bg-gradient-to-r from-[#66CC66] via-[#33CC66] to-[#00CC99] backdrop-blur-xl border border-white/20 shadow-xl"
+      className="py-20 bg-[#3333cc] backdrop-blur-xl border border-white/20 shadow-xl"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 mb-6 border border-white/20">
+              <Shield className="w-4 h-4 text-white" />
+              <span className="text-sm text-white font-medium">Gas Safe Registered & MCS Accredited</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               BOOK YOUR{" "}
-              <span className="text-[#3333cc]">
+              <span className="text-white">
                 HEATING
               </span>
               <br />
@@ -202,7 +206,7 @@ export function Contact() {
 
             <div className="space-y-4 mb-8">
               <div className="flex items-start gap-3">
-                <div className="w-6 h-6 bg-[#3333cc] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-6 h-6 bg-gradient-to-r from-[#66CC66] via-[#33CC66] to-[#00CC99] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <svg
                     className="w-4 h-4 text-white"
                     fill="none"
@@ -227,7 +231,7 @@ export function Contact() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-6 h-6 bg-[#3333cc] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-6 h-6 bg-gradient-to-r from-[#66CC66] via-[#33CC66] to-[#00CC99] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <svg
                     className="w-4 h-4 text-white"
                     fill="none"
@@ -361,7 +365,7 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#3333cc] text-white py-4 rounded-lg hover:shadow-lg transition-all font-semibold disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full bg-white text-[#3333cc] py-4 rounded-lg border border-white hover:shadow-lg transition-all font-semibold disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'SENDING...' : 'REQUEST CALLBACK'}
               </button>

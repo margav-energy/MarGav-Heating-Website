@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Shield, Star } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 import { Button } from './ui/button';
 
 const heroImage = new URL('../../assets/hero.png', import.meta.url).href;
@@ -24,16 +24,6 @@ export function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-40">
         <div className="max-w-2xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 mb-8 border border-white/10"
-          >
-            <Shield className="w-4 h-4 text-[#3333cc]" />
-            <span className="text-sm text-white/90 font-medium">Gas Safe Registered & MCS Accredited</span>
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
