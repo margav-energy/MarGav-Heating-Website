@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, Loader2, Search, Shield } from 'lucide-react';
+import { CheckCircle2, Loader2, Search } from 'lucide-react';
 
 type FormState = {
   fullName: string;
@@ -191,10 +191,6 @@ export function Contact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 mb-6 border border-white/20">
-              <Shield className="w-4 h-4 text-white" />
-              <span className="text-sm text-white font-medium">Gas Safe Registered & MCS Accredited</span>
-            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               BOOK YOUR{" "}
               <span className="text-white">

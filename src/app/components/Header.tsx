@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-const logo = new URL("../../assets/margav_intergas.png", import.meta.url).href;
+const logo = new URL("../../assets/MarGav Intergas logo.svg", import.meta.url).href;
 const phoneHref = "tel:+441889256069";
 
 export function Header() {
@@ -72,7 +72,7 @@ export function Header() {
               <img
                 src={logo}
                 alt="MarGav Heating logo"
-                className="h-12 sm:h-14 md:h-16 w-auto object-contain"
+                className="w-[220px] sm:w-[260px] md:w-[300px] h-auto object-contain"
               />
             </div>
 

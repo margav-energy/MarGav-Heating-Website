@@ -1,6 +1,6 @@
 import React from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
-const logo = new URL('../../assets/margav_intergas.png', import.meta.url).href;
+import { Mail, Phone, MapPin, Shield } from 'lucide-react';
+const logo = new URL('../../assets/MarGav Intergas logo.svg', import.meta.url).href;
 const phoneHref = 'tel:+441889256069';
 const env = (import.meta as ImportMeta & { env: Record<string, string | undefined> }).env;
 const PRIVACY_POLICY_URL = env.VITE_PRIVACY_POLICY_URL || '#';
@@ -14,7 +14,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.2fr_0.8fr_1fr] mb-10">
           <div>
             <div className="mb-4">
-              <img src={logo} alt="MarGav Heating logo" className="h-10 w-auto object-contain" />
+              <img src={logo} alt="MarGav Heating logo" className="w-[220px] h-auto object-contain" />
             </div>
             <p className="text-white/70 mb-6 max-w-sm text-sm leading-relaxed">
               Transforming UK properties of all types into energy-efficient, sustainable homes through expert consultancy and professional installation services.
@@ -35,6 +35,10 @@ export function Footer() {
                 <a href="mailto:sales@margav.energy" className="text-sm hover:text-[#3333cc] transition-colors">
                   sales@margav.energy
                 </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <Shield className="w-4 h-4 text-[#3333cc] flex-shrink-0 mt-0.5" />
+                <span className="text-sm">Gas Safe Registered &amp; MCS Accredited</span>
               </li>
             </ul>
           </div>

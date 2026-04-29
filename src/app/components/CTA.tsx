@@ -7,7 +7,7 @@ export function CTA() {
     <section className="py-20 bg-[#3333cc] backdrop-blur-xl border border-white/20 shadow-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="relative h-96 rounded-2xl overflow-hidden">
+          <div className="relative h-72 sm:h-96 w-[85%] md:w-full mx-auto rounded-2xl overflow-hidden">
             <img
               src={ctaImage}
               alt="Comfortable modern home"
