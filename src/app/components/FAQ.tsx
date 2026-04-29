@@ -22,7 +22,7 @@ export function FAQ() {
     {
       question: "DO YOU OFFER WARRANTIES ON YOUR WORK?",
       answer:
-        "Absolutely. All installations come with 12 years parts & labour warranty.",
+        "Absolutely. All boilers come with 12 years parts & labour warranty and 7 years manufacturer's warranty for air source heat pumps.",
     },
   ];
 
