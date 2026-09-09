@@ -1,7 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router';
 import { Mail, Phone, MapPin, Shield } from 'lucide-react';
 const logo = new URL('../../assets/MarGav Intergas logo.svg', import.meta.url).href;
 const phoneHref = 'tel:+441889256069';
+const applyForFinanceHref = 'https://ideal4finance.com/retail-hi/apply/margav';
+const personalLoanHref = 'https://ideal4finance.com/apply/margav/loan';
 const env = (import.meta as ImportMeta & { env: Record<string, string | undefined> }).env;
 const PRIVACY_POLICY_URL = env.VITE_PRIVACY_POLICY_URL || '#';
 const COOKIE_POLICY_URL = env.VITE_COOKIE_POLICY_URL || '#';
@@ -51,6 +54,17 @@ export function Footer() {
               <li><a href="#services" className="hover:text-[#3333cc] transition-colors">SERVICES</a></li>
               <li><a href="#projects" className="hover:text-[#3333cc] transition-colors">PROJECTS</a></li>
               <li><a href="#contact" className="hover:text-[#3333cc] transition-colors">CONTACT</a></li>
+              <li><Link to="/finance" className="hover:text-[#3333cc] transition-colors">FINANCE CALCULATOR</Link></li>
+              <li>
+                <a href={applyForFinanceHref} target="_blank" rel="noopener noreferrer" className="hover:text-[#3333cc] transition-colors">
+                  APPLY FOR FINANCE
+                </a>
+              </li>
+              <li>
+                <a href={personalLoanHref} target="_blank" rel="noopener noreferrer" className="hover:text-[#3333cc] transition-colors">
+                  PERSONAL LOAN
+                </a>
+              </li>
             </ul>
           </div>
 

@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 const logo = new URL("../../assets/MarGav Intergas logo.svg", import.meta.url).href;
 const phoneHref = "tel:+441889256069";
 const applyForFinanceHref = "https://ideal4finance.com/retail-hi/apply/margav";
+const personalLoanHref = "https://ideal4finance.com/apply/margav/loan";
 
 export function Header() {
   const navLinks = [
@@ -50,7 +51,7 @@ export function Header() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 1280) {
+      if (window.innerWidth >= 1536) {
         setIsMobileMenuOpen(false);
       }
     };
@@ -83,7 +84,7 @@ export function Header() {
               />
             </div>
 
-            <nav className="hidden xl:flex items-center gap-1 2xl:gap-3">
+            <nav className="hidden 2xl:flex items-center gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.id}
@@ -116,12 +117,20 @@ export function Header() {
               >
                 APPLY FOR FINANCE
               </a>
+              <a
+                href={personalLoanHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="whitespace-nowrap text-gray-700 text-sm px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"
+              >
+                PERSONAL LOAN
+              </a>
             </nav>
 
             <div className="flex items-center gap-3 shrink-0">
               <a
                 href={phoneHref}
-                className="hidden xl:block whitespace-nowrap text-gray-700 text-sm hover:text-[#3333cc] transition-colors"
+                className="hidden 2xl:block whitespace-nowrap text-gray-700 text-sm hover:text-[#3333cc] transition-colors"
               >
                 01889 256069
               </a>
@@ -132,7 +141,7 @@ export function Header() {
                 type="button"
                 aria-label="Toggle menu"
                 onClick={() => setIsMobileMenuOpen((open) => !open)}
-                className="xl:hidden w-10 h-10 rounded-full border border-gray-300 bg-white text-gray-700 flex items-center justify-center"
+                className="2xl:hidden w-10 h-10 rounded-full border border-gray-300 bg-white text-gray-700 flex items-center justify-center"
               >
                 {isMobileMenuOpen ? (
                   <X className="w-5 h-5" />
@@ -146,7 +155,7 @@ export function Header() {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="xl:hidden fixed inset-0 z-40 bg-black/85 backdrop-blur-xl pt-28 px-4 sm:px-6">
+        <div className="2xl:hidden fixed inset-0 z-40 bg-black/85 backdrop-blur-xl pt-28 px-4 sm:px-6">
           <button
             type="button"
             aria-label="Close menu"
@@ -193,6 +202,15 @@ export function Header() {
                 className="block text-white/90 text-sm px-4 py-3 rounded-xl hover:bg-white/10 transition-colors"
               >
                 APPLY FOR FINANCE
+              </a>
+              <a
+                href={personalLoanHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-white/90 text-sm px-4 py-3 rounded-xl hover:bg-white/10 transition-colors"
+              >
+                PERSONAL LOAN
               </a>
               <a
                 href={phoneHref}
