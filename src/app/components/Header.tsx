@@ -51,7 +51,7 @@ export function Header() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 1536) {
+      if (window.innerWidth >= 768) {
         setIsMobileMenuOpen(false);
       }
     };
@@ -73,18 +73,18 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-      <div className="max-w-screen-2xl mx-auto relative">
+      <div className="relative">
         <div className="h-24">
-          <div className="h-24 px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+          <div className="h-24 px-4 md:px-3 lg:px-6 xl:px-8 flex items-center justify-between gap-2 lg:gap-4">
             <div className="flex items-center gap-2 shrink-0">
               <img
                 src={logo}
                 alt="MarGav Heating logo"
-                className="w-[220px] sm:w-[260px] md:w-[300px] h-auto object-contain"
+                className="w-[220px] sm:w-[260px] md:w-[120px] lg:w-[160px] xl:w-[200px] 2xl:w-[260px] h-auto object-contain"
               />
             </div>
 
-            <nav className="hidden 2xl:flex items-center gap-2">
+            <nav className="hidden md:flex items-center lg:gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.id}
@@ -92,8 +92,8 @@ export function Header() {
                   onClick={() => setActiveSection(link.id)}
                   className={
                     isHome && activeSection === link.id
-                      ? "whitespace-nowrap text-white text-sm px-4 py-2 rounded-full bg-[#3333cc] transition-colors"
-                      : "whitespace-nowrap text-gray-700 text-sm px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"
+                      ? "whitespace-nowrap text-white text-[10px] lg:text-xs 2xl:text-sm px-1 lg:px-2 2xl:px-3 py-2 rounded-full bg-[#3333cc] transition-colors"
+                      : "whitespace-nowrap text-gray-700 text-[10px] lg:text-xs 2xl:text-sm px-1 lg:px-2 2xl:px-3 py-2 rounded-full hover:bg-gray-100 transition-colors"
                   }
                 >
                   {link.label}
@@ -103,8 +103,8 @@ export function Header() {
                 to="/finance"
                 className={
                   isFinancePage
-                    ? "whitespace-nowrap text-white text-sm px-4 py-2 rounded-full bg-[#3333cc] transition-colors"
-                    : "whitespace-nowrap text-gray-700 text-sm px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"
+                    ? "whitespace-nowrap text-white text-[10px] lg:text-xs 2xl:text-sm px-1 lg:px-2 2xl:px-3 py-2 rounded-full bg-[#3333cc] transition-colors"
+                    : "whitespace-nowrap text-gray-700 text-[10px] lg:text-xs 2xl:text-sm px-1 lg:px-2 2xl:px-3 py-2 rounded-full hover:bg-gray-100 transition-colors"
                 }
               >
                 FINANCE CALCULATOR
@@ -113,7 +113,7 @@ export function Header() {
                 href={applyForFinanceHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="whitespace-nowrap text-gray-700 text-sm px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"
+                className="whitespace-nowrap text-gray-700 text-[10px] lg:text-xs 2xl:text-sm px-1 lg:px-2 2xl:px-3 py-2 rounded-full hover:bg-gray-100 transition-colors"
               >
                 APPLY FOR FINANCE
               </a>
@@ -121,7 +121,7 @@ export function Header() {
                 href={personalLoanHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="whitespace-nowrap text-gray-700 text-sm px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"
+                className="whitespace-nowrap text-gray-700 text-[10px] lg:text-xs 2xl:text-sm px-1 lg:px-2 2xl:px-3 py-2 rounded-full hover:bg-gray-100 transition-colors"
               >
                 PERSONAL LOAN
               </a>
@@ -134,14 +134,14 @@ export function Header() {
               >
                 01889 256069
               </a>
-              <button className="hidden sm:inline-flex whitespace-nowrap bg-[#3333cc] text-white text-sm px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity">
+              <button className="hidden sm:inline-flex md:hidden xl:inline-flex whitespace-nowrap bg-[#3333cc] text-white text-sm xl:text-xs 2xl:text-sm px-5 xl:px-4 2xl:px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity">
                 GET A QUOTE
               </button>
               <button
                 type="button"
                 aria-label="Toggle menu"
                 onClick={() => setIsMobileMenuOpen((open) => !open)}
-                className="2xl:hidden w-10 h-10 rounded-full border border-gray-300 bg-white text-gray-700 flex items-center justify-center"
+                className="md:hidden w-10 h-10 rounded-full border border-gray-300 bg-white text-gray-700 flex items-center justify-center"
               >
                 {isMobileMenuOpen ? (
                   <X className="w-5 h-5" />
@@ -155,7 +155,7 @@ export function Header() {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="2xl:hidden fixed inset-0 z-40 bg-black/85 backdrop-blur-xl pt-28 px-4 sm:px-6">
+        <div className="md:hidden fixed inset-0 z-40 bg-black/85 backdrop-blur-xl pt-28 px-4 sm:px-6">
           <button
             type="button"
             aria-label="Close menu"
