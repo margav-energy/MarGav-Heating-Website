@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { WhatsAppFloat } from './components/WhatsAppFloat';
 import { ConsentManager } from './components/ConsentManager';
+import { RouteTracker } from './components/RouteTracker';
 import { HomePage } from './pages/HomePage';
 import { FinancePage } from './pages/FinancePage';
 
@@ -10,6 +11,7 @@ export default function App() {
   return (
     <div className="min-h-screen">
       <ConsentManager />
+      <RouteTracker />
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />

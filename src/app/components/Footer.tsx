@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { Mail, Phone, MapPin, Shield } from 'lucide-react';
+import { trackPhoneClick } from '../../lib/analytics';
 const logo = new URL('../../assets/MarGav Intergas logo.svg', import.meta.url).href;
 const phoneHref = 'tel:+441889256069';
 const applyForFinanceHref = 'https://ideal4finance.com/retail-hi/apply/margav';
@@ -29,7 +30,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-[#3333cc] flex-shrink-0 mt-0.5" />
-                <a href={phoneHref} className="text-sm hover:text-[#3333cc] transition-colors">
+                <a href={phoneHref} onClick={() => trackPhoneClick('footer')} className="text-sm hover:text-[#3333cc] transition-colors">
                   01889 256069
                 </a>
               </li>

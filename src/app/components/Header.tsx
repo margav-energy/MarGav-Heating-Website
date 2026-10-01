@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router";
 import { Menu, X } from "lucide-react";
+import { trackPhoneClick } from "../../lib/analytics";
 const logo = new URL("../../assets/MarGav Intergas logo.svg", import.meta.url).href;
 const phoneHref = "tel:+441889256069";
 const applyForFinanceHref = "https://ideal4finance.com/retail-hi/apply/margav";
@@ -130,6 +131,7 @@ export function Header() {
             <div className="flex items-center gap-3 shrink-0">
               <a
                 href={phoneHref}
+                onClick={() => trackPhoneClick("header")}
                 className="hidden 2xl:block whitespace-nowrap text-gray-700 text-sm hover:text-[#3333cc] transition-colors"
               >
                 01889 256069
@@ -214,7 +216,10 @@ export function Header() {
               </a>
               <a
                 href={phoneHref}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  trackPhoneClick("mobile_menu");
+                  setIsMobileMenuOpen(false);
+                }}
                 className="block text-white/90 text-sm px-4 py-3 rounded-xl hover:bg-white/10 transition-colors"
               >
                 01889 256069

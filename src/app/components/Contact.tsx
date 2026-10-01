@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle2, Loader2, Search } from 'lucide-react';
+import { trackLeadCapture } from '../../lib/analytics';
 
 type FormState = {
   fullName: string;
@@ -172,6 +173,7 @@ export function Contact() {
         throw new Error('Submission failed');
       }
 
+      trackLeadCapture('contact_form', form.serviceType);
       setSubmitMessage('Thanks! Your request has been sent.');
       setIsSubmittedSuccessfully(true);
       setForm(initialFormState);
