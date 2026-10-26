@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router";
 import { Menu, X } from "lucide-react";
 import { trackPhoneClick } from "../../lib/analytics";
 const logo = new URL("../../assets/MarGav Intergas logo.svg", import.meta.url).href;
-const phoneHref = "tel:+441889256069";
+const phoneHref = "tel:+441889227291";
 const applyForFinanceHref = "https://ideal4finance.com/retail-hi/apply/margav";
 const personalLoanHref = "https://ideal4finance.com/apply/margav/loan";
 
@@ -134,7 +134,7 @@ export function Header() {
                 onClick={() => trackPhoneClick("header")}
                 className="hidden 2xl:block whitespace-nowrap text-gray-700 text-sm hover:text-[#3333cc] transition-colors"
               >
-                01889 256069
+                01889 227291
               </a>
               <button className="hidden sm:inline-flex md:hidden xl:inline-flex whitespace-nowrap bg-[#3333cc] text-white text-sm xl:text-xs 2xl:text-sm px-5 xl:px-4 2xl:px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity">
                 GET A QUOTE
@@ -222,7 +222,7 @@ export function Header() {
                 }}
                 className="block text-white/90 text-sm px-4 py-3 rounded-xl hover:bg-white/10 transition-colors"
               >
-                01889 256069
+                01889 227291
               </a>
             </div>
           </div>

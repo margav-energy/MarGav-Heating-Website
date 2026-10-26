@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { Mail, Phone, MapPin, Shield } from 'lucide-react';
 import { trackPhoneClick } from '../../lib/analytics';
 const logo = new URL('../../assets/MarGav Intergas logo.svg', import.meta.url).href;
-const phoneHref = 'tel:+441889256069';
+const phoneHref = 'tel:+441889227291';
 const applyForFinanceHref = 'https://ideal4finance.com/retail-hi/apply/margav';
 const personalLoanHref = 'https://ideal4finance.com/apply/margav/loan';
 const env = (import.meta as ImportMeta & { env: Record<string, string | undefined> }).env;
@@ -31,7 +31,7 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-[#3333cc] flex-shrink-0 mt-0.5" />
                 <a href={phoneHref} onClick={() => trackPhoneClick('footer')} className="text-sm hover:text-[#3333cc] transition-colors">
-                  01889 256069
+                  01889 227291
                 </a>
               </li>
               <li className="flex items-start gap-3">
